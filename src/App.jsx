@@ -6,6 +6,8 @@ import Home from "./pages/Home.jsx";
 import WeatherForecast from "./pages/WeatherForecast.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "sonner";
 
 // Make sure select one of the following layouts: default.jsx, navbar.jsx, sidebar.jsx depending on your project
 import SharedLayout from "./components/layouts/sidebar.jsx";
@@ -17,7 +19,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-          <AuthProvider>
+        <AuthProvider>
           <Router>
             <Routes>
               <Route path="/login" element={<Login />} />
